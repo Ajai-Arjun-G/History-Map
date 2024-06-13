@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  font-family: "Spicy Rice", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  background-color: #f6f7fb;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.nav {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  position: sticky;
+  background-color: transparent;
+  padding: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav a button {
+  background-color: rgb(2, 0, 0);
+  color: #e0e0e0;
+  margin: 10px;
+  font-size: 30px;
+  width: 200px;
+  height: 100px;
+  outline: none;
+  border: none;
+  border-radius: 40px;
+  text-transform: capitalize;
+}
+
+nav a button.active,
+nav a button:hover {
+  background-color: #e0e0e0;
+  color: rgb(2, 0, 0);
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 50px; /* Adjust the width to fit your design */
+}
+
+.timeline-container::before {
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 4px;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0%;
+  width: 4px;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+  margin-bottom: 20px; /* Add some space between circles */
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
